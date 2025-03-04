@@ -32,6 +32,8 @@
     "files": true
   },
   "include": [
+    "alpha/**/*.ts",
+    "alpha/**/*.js",
     "src/**/*.ts",
     "src/**/*.vue",
     "schemas/**/*.ts",

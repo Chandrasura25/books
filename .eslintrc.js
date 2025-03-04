@@ -60,5 +60,7 @@ module.exports = {
     'postcss.config.js',
     'src/components/**/*.vue', // Incrementally fix these
     'electron-builder.ts',
+    'alpha/**/*.ts',
+    'alpha/**/*.js',
   ],
 };
