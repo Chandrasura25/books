@@ -1,0 +1,22 @@
+{
+  "name": "JV-1015",
+  "numberSeries": "JV-",
+  "entryType": "Journal Entry",
+  "date": "2025-03-06",
+  "accounts": [
+    {
+      "account": "Example Account 3",
+      "debit": 600,
+      "credit": 0
+    },
+    {
+      "account": "Example Account 4",
+      "debit": 0,
+      "credit": 600
+    }
+  ],
+  "referenceNumber": "Reg1234",
+  "referenceDate": "2025-03-07",
+  "userRemark": "This is a test journal entry",
+  "attachment": "path/to/attachment.pdf"
+}
