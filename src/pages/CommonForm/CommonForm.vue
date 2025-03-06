@@ -396,6 +396,9 @@ export default defineComponent({
       this.activeTab = [...this.groupedFields.keys()][0];
     }
     this.isPrintable = await isPrintable(this.schemaName);
+
+    // Automatically fill data and test save and submit
+    // await this.autoFillAndTest();
   },
   activated(): void {
     this.useFullWidth = !!this.fyo.singles.Misc?.useFullWidth;
@@ -495,6 +498,57 @@ export default defineComponent({
       }
 
       this.updateGroupedFields();
+    },
+    async autoFillAndTest() {
+      if (!this.hasDoc) {
+        return;
+      }
+
+      // Fill in some example data
+      const fieldValueMap = {
+        name: "JV-1009",
+        entryType: "Journal Entry",
+        date: "2025-03-09",
+        numberSeries: "JV-",
+        accounts: [
+          {
+            account: "Service",
+            debit: 1000,
+            credit: 0
+          },
+          {
+            account: "Cash",
+            debit: 0,
+            credit: 1000
+          }
+        ]
+      };
+
+      try {
+        // Set each field value except accounts
+        for (const [field, value] of Object.entries(fieldValueMap)) {
+          if (field !== 'accounts') {
+            await this.doc.set(field, value);
+          }
+        }
+
+        // Set accounts separately
+        await this.doc.set('accounts', fieldValueMap.accounts);
+
+        // Submit the document
+        await this.submit();
+         // Save the document
+         await this.sync();
+      } catch (error) {
+        console.log(error);
+        if (error instanceof ValidationError) {
+          console.error("ValidationError:", error.message);
+          // Handle the error, e.g., show a notification to the user
+        } else {
+          console.error("Unexpected error:", error);
+        }
+      }
+    
     },
   },
 });

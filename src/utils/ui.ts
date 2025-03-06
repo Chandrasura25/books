@@ -566,7 +566,7 @@ export async function commonDocSubmit(doc: Doc): Promise<boolean> {
   if (!success) {
     return false;
   }
-
+  //success = true
   success = await showSubmitOrSyncDialog(doc, 'submit');
   if (!success) {
     return false;
