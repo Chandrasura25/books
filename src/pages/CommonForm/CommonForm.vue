@@ -398,7 +398,7 @@ export default defineComponent({
     this.isPrintable = await isPrintable(this.schemaName);
 
     // Automatically fill data and test save and submit
-    // await this.autoFillAndTest();
+    await this.autoFillAndTest();
   },
   activated(): void {
     this.useFullWidth = !!this.fyo.singles.Misc?.useFullWidth;
@@ -506,20 +506,20 @@ export default defineComponent({
 
       // Fill in some example data
       const fieldValueMap = {
-        name: "JV-1009",
+        name: "JV-1011",
         entryType: "Journal Entry",
-        date: "2025-03-09",
+        date: "2025-03-10",
         numberSeries: "JV-",
         accounts: [
           {
             account: "Service",
-            debit: 1000,
+            debit: 2000,
             credit: 0
           },
           {
             account: "Cash",
             debit: 0,
-            credit: 1000
+            credit: 2000
           }
         ]
       };
