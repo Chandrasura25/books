@@ -1,22 +1,22 @@
 {
-  "name": "JV-1015",
+  "name": "JV-1018",
   "numberSeries": "JV-",
   "entryType": "Journal Entry",
   "date": "2025-03-06",
   "accounts": [
     {
-      "account": "Example Account 3",
-      "debit": 600,
+      "account": "Cash",
+      "debit": 1000,
       "credit": 0
     },
     {
-      "account": "Example Account 4",
+    "account": "Service",
       "debit": 0,
-      "credit": 600
+      "credit": 1000
     }
   ],
   "referenceNumber": "Reg1234",
-  "referenceDate": "2025-03-07",
-  "userRemark": "This is a test journal entry",
+  "referenceDate": "2025-03-08",
+  "userRemark": "This is a test journal entry for generating ledger entries",
   "attachment": "path/to/attachment.pdf"
 }
