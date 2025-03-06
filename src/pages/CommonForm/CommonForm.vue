@@ -398,7 +398,7 @@ export default defineComponent({
     this.isPrintable = await isPrintable(this.schemaName);
 
     // Automatically fill data and test save and submit
-    await this.autoFillAndTest();
+    // await this.autoFillAndTest();
   },
   activated(): void {
     this.useFullWidth = !!this.fyo.singles.Misc?.useFullWidth;
